@@ -1,4 +1,4 @@
-namespace Core;
+namespace Domain;
 
 public class Province: BaseEntity
 {

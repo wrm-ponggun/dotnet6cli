@@ -1,5 +1,5 @@
 using System.Security.Principal;
-namespace Core;
+namespace Domain;
 
 public class BaseEntity
 {
