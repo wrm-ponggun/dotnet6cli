@@ -1,6 +1,6 @@
 namespace Domain;
 
-public class PointOfInterest: BaseEntity
+public class PointOfInterest: BaseEntity, IBaseEntity
 {
     public string Name { get; set; }
     public string Description { get; set; }

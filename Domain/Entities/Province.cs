@@ -1,6 +1,6 @@
 namespace Domain;
 
-public class Province: BaseEntity
+public class Province: BaseEntity, IBaseEntity
 {
     public string Name { get; set; }
     public string Description { get; set; }

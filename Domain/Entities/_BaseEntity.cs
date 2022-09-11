@@ -1,10 +1,9 @@
-using System.Security.Principal;
 namespace Domain;
 
-public class BaseEntity
+public class BaseEntity: IBaseEntity
 {
     public Guid Id { get; set; }
-    public DateTime Created { get; set; }
-    public DateTime Updated { get; set; }
+    public DateTime CreatedUTC { get; set; }
+    public DateTime UpdatedUTC { get; set; }
     public bool IsActive { get; set; } 
 }
