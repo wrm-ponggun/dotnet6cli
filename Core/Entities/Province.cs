@@ -1,9 +1,7 @@
-using System.Drawing;
 namespace Core;
 
-public class Province
+public class Province: BaseEntity
 {
-    public Guid Id { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
 
