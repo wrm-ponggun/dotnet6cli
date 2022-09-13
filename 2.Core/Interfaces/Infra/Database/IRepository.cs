@@ -10,7 +10,7 @@ namespace Core;
     Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate);
     Task AddAsync(TEntity entity);
     Task AddRangeAsync(IEnumerable<TEntity> entities);
-    Task RemoveAsync(Guid id);
-    Task RemoveRangeAsync(IEnumerable<Guid> ids);
+    Task RemoveAsync(TEntity entity);
+    Task RemoveRangeAsync(IEnumerable<TEntity> entities);
     Task SaveChangesAsync();
 }
