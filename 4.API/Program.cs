@@ -31,4 +31,16 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+await SeedDatabase();
+
 app.Run();
+
+async Task SeedDatabase()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbcontext = scope.ServiceProvider.GetRequiredService<DataContext>();
+        await dbcontext.Database.MigrateAsync(); // Run migration scripts
+        await Infra.Seed.SeedData(dbcontext); // Seed data to the project
+    }
+}
