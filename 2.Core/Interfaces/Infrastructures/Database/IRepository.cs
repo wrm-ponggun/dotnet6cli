@@ -12,5 +12,5 @@ namespace Core;
     Task AddRangeAsync(IEnumerable<TEntity> entities);
     Task RemoveAsync(Guid id);
     Task RemoveRangeAsync(IEnumerable<Guid> ids);
-    Task CommitAsync();
+    Task SaveChangesAsync();
 }

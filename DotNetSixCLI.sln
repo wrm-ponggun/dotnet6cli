@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{284B8669-C413-4CC2-9964-731B2C1FAA38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "1.Domain\Domain.csproj", "{284B8669-C413-4CC2-9964-731B2C1FAA38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{C9070885-F7A4-422B-9718-380A749DC195}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "2.Core\Core.csproj", "{C9070885-F7A4-422B-9718-380A749DC195}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Infra\Infra.csproj", "{5DCADD4A-B213-41B7-88C5-8BBD964681E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "3.Infra\Infra.csproj", "{5DCADD4A-B213-41B7-88C5-8BBD964681E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{749BE0DB-60EF-4107-8BAE-E7B76D8F6840}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "4.API\API.csproj", "{749BE0DB-60EF-4107-8BAE-E7B76D8F6840}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
