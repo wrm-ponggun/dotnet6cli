@@ -22,7 +22,6 @@ public class Seed
                 Description = "รายละเอียดเพิ่มเติมในจังหวัดขอนแก่น",
                 IsActive = true
             });
-
             provinces.Add(new Province(){
                 Id = bangkokProvinceId,
                 Name = "กรุงเทพ",
@@ -49,7 +48,6 @@ public class Seed
                 Description = "",
                 IsActive = true
             });
-
             pointOfInterests.Add(new PointOfInterest(){
                 Id = Guid.NewGuid(),
                 ProvinceId = khonKeanProvinceId,
@@ -59,7 +57,6 @@ public class Seed
                 Description = "",
                 IsActive = true
             });
-
             pointOfInterests.Add(new PointOfInterest(){
                 Id = Guid.NewGuid(),
                 ProvinceId = khonKeanProvinceId,
@@ -69,7 +66,6 @@ public class Seed
                 Description = "",
                 IsActive = true
             });
-
             pointOfInterests.Add(new PointOfInterest(){
                 Id = Guid.NewGuid(),
                 ProvinceId = bangkokProvinceId,
@@ -79,7 +75,6 @@ public class Seed
                 Description = "",
                 IsActive = true
             });
-
             pointOfInterests.Add(new PointOfInterest(){
                 Id = Guid.NewGuid(),
                 ProvinceId = bangkokProvinceId,
