@@ -16,6 +16,17 @@ builder.Services.AddDbContext<DataContext>(opt =>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+#region Configure IOption Pattern 
+// https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-6.0
+
+builder.Services.Configure<MailGunEmailProviderOptions>(
+    builder.Configuration.GetSection(MailGunEmailProviderOptions.ConfigItem));
+
+builder.Services.Configure<SendgridEmailProviderOptions>(
+    builder.Configuration.GetSection(SendgridEmailProviderOptions.ConfigItem));
+
+#endregion
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
