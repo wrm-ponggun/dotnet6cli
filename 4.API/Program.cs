@@ -22,8 +22,9 @@ builder.Services.AddDbContext<DataContext>(opt =>
 builder.Services.Configure<MailGunEmailProviderOptions>(
     builder.Configuration.GetSection(MailGunEmailProviderOptions.ConfigItem));
 
-builder.Services.Configure<SendgridEmailProviderOptions>(
-    builder.Configuration.GetSection(SendgridEmailProviderOptions.ConfigItem));
+// Uncomment this to use SendGrid as Email Provider and comment the MailGun above instead
+// builder.Services.Configure<SendgridEmailProviderOptions>(
+//     builder.Configuration.GetSection(SendgridEmailProviderOptions.ConfigItem));
 
 #endregion
 
