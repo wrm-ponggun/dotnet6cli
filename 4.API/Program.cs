@@ -26,6 +26,19 @@ builder.Services.Configure<SendgridEmailProviderOptions>(
      builder.Configuration.GetSection(SendgridEmailProviderOptions.ConfigItem));
 #endregion
 
+#region Configure DI Container - Service Lifetimes - Infra
+builder.Services.AddTransient<ITransientService, TransientService>();
+builder.Services.AddScoped<IScopedService, ScopedService>();
+builder.Services.AddSingleton<ISingletonService, SingletonService>();
+
+// Try to switch between Sendgrid and Mailgun
+builder.Services.AddTransient<IEmailProvider, SendgridEmailProvider>();
+//builder.Services.AddTransient<IEmailProvider, MailGunEmailProvider>();
+#endregion
+
+#region Configure DI Container - Service Lifetimes - Business Services
+#endregion
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
