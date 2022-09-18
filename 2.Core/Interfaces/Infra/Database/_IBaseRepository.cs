@@ -6,10 +6,9 @@ namespace Core;
 public interface IBaseRepository<TEntity> where TEntity:IBaseEntity
 {
     Task<TEntity> GetByIdAsync(Guid id);
-    List<TEntity> GetByConditions(Expression<Func<TEntity, bool>> predicate);
-    Task AddAsync(TEntity entity);
-    Task AddRangeAsync(List<TEntity> entities);
-    void Remove(TEntity entity);
-    void RemoveRange(List<TEntity> entities);
+    Task<bool> DoesExist(Expression<Func<TEntity, bool>> predicate);
+    Task<TEntity> AddAsync(TEntity entity);
+    TEntity Update(TEntity entity);
+    TEntity Remove(TEntity entity);
     Task SaveChangesAsync();
 }

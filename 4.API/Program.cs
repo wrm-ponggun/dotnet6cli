@@ -34,10 +34,13 @@ builder.Services.AddSingleton<ISingletonService, SingletonService>();
 // Try to switch between Sendgrid and Mailgun
 //builder.Services.AddTransient<IEmailProvider, SendgridEmailProvider>();
 builder.Services.AddTransient<IEmailProvider, MailGunEmailProvider>();
+
+builder.Services.AddScoped<IProvinceRepository, ProvinceRepository>();
 #endregion
 
 #region Configure DI Container - Service Lifetimes - Business Services
 builder.Services.AddTransient<ITokenService, TokenService>();
+builder.Services.AddScoped<IProvinceService, ProvinceService>();
 #endregion
 
 var app = builder.Build();

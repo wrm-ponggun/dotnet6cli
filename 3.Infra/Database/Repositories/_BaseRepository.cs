@@ -1,6 +1,7 @@
 using Domain;
 using Core;
 using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infra;
 
@@ -17,30 +18,36 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         return await _context.Set<TEntity>().FindAsync(id);
     }
 
-    public List<TEntity> GetByConditions(Expression<Func<TEntity, bool>> predicate)
+    public async Task<bool> DoesExist(Expression<Func<TEntity, bool>> predicate)
     {
-        return _context.Set<TEntity>().Where(predicate).ToList();
+        return await _context.Set<TEntity>().AnyAsync(predicate);
     }
 
-    public async Task AddAsync(TEntity entity)
+    public async Task<TEntity> AddAsync(TEntity entity)
     {
+        entity.Id = Guid.NewGuid();
+        entity.CreatedUTC = DateTime.UtcNow;
+        entity.UpdatedUTC = entity.CreatedUTC;
+        entity.IsActive = true;
+
         await _context.Set<TEntity>().AddAsync(entity);
+
+        return entity;
     }
 
-    public async Task AddRangeAsync(List<TEntity> entities)
+    public TEntity Update(TEntity entity)
     {
-        await _context.Set<TEntity>().AddRangeAsync(entities);
+        entity.UpdatedUTC = DateTime.UtcNow;
+
+        return entity;
     }
 
-    public void Remove(TEntity entity)
+    public TEntity Remove(TEntity entity)
     {
         entity.UpdatedUTC = DateTime.UtcNow;
         entity.IsActive = false;
-    }
 
-    public void RemoveRange(List<TEntity> entities)
-    {
-        entities.ForEach( c=> Remove(c) );
+        return entity;
     }
 
     public async Task SaveChangesAsync()
